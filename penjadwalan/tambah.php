@@ -34,7 +34,7 @@ if( isset($_POST["submit"])) {
 
 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
   <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-     <h1 class="h2">Tambah Mata Kuliah</h1>
+     <h1 class="h2">Tambah Jadwal</h1>
   </div>
   <div class="kembali">
     <a href="../penjadwalan.php" class="btn btn-danger mb-4">Kembali</a>
@@ -58,7 +58,7 @@ if( isset($_POST["submit"])) {
       <div class="mb-3">
         <label for="kode_dosen" class="form-label">Kode Dosen</label>
         <!-- <input type="text" class="form-control" id="kode_dosen" name="kode_dosen"> -->
-        <select name="kode_matkul" id="kode_matkul" class="form-select">
+        <select name="kode_dosen" id="kode_dosen" class="form-select">
           <option selected disabled>-- Pilih Dosen --</option>
           <?php foreach($dosen as $ds) { ?>
           <option value="<?php echo $ds["kode_dosen"]; ?>"><?php echo $ds["kode_dosen"]; ?> | <?php echo $ds["nama_dosen"]; ?></option>

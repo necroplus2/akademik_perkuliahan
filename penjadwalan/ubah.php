@@ -8,6 +8,9 @@ require '../../perkuliahan/fungsi.php';
 $id = $_GET["id"];
 $jadwal = query("SELECT * FROM tb_jadwal WHERE id = $id")[0];
 
+$matkul = query("SELECT * FROM tb_matkul");
+$dosen = query("SELECT * FROM tb_dosen");
+
 
 // cek apakah tombol submit sudah ditekan atau belum
 if( isset($_POST["submit"])) {
@@ -52,7 +55,13 @@ if( ubah_jadwal($_POST) > 0 ) {
       </div>
       <div class="mb-3">
         <label for="kode_dosen" class="form-label">Kode Dosen</label>
-        <input type="text" class="form-control" id="kode_dosen" name="kode_dosen" value="<?php echo $jadwal["kode_dosen"]; ?>">
+        <!-- <input type="text" class="form-control" id="kode_dosen" name="kode_dosen" value="<?php //echo $jadwal["kode_dosen"]; ?>"> -->
+        <select name="kode_dosen" id="kode_dosen" class="form-select">
+          <option disabled>-- Pilih Dosen --</option>
+          <?php foreach($dosen as $ds) { ?>
+          <option <?php if($ds["kode_dosen"] == $jadwal["kode_dosen"]) {echo "selected";}?> value="<?php if($ds["kode_dosen"] == $jadwal["kode_dosen"]) {echo $jadwal["kode_dosen"];} ?>"><?php echo $ds["kode_dosen"]; ?> | <?php echo $ds["nama_dosen"]; ?></option>
+          <?php } ?>
+        </select>
       </div>
       <div class="mb-3">
         <label for="ruangan" class="form-label">Ruangan</label>
