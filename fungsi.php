@@ -225,6 +225,93 @@ function ubah_mhs ($data) {
 
 }
 
+function kelas($nim) {
+  global $mahasiswa;
+  foreach($mahasiswa as $mhs){
+    if($mhs["nim"] == $nim){
+      if($mhs["program_studi"] == "teknik informatika" && $mhs["konsentrasi"] == "software engineering" && $mhs["kelas"] == "malam") {
+        $tanggal_input = $mhs["tanggal_input"];
+        $tahun = explode("-",$tanggal_input);
+        echo "TI SE M " . substr($tahun[0],2);
+      }elseif($mhs["program_studi"] == "teknik informatika" && $mhs["konsentrasi"] == "computer networking" && $mhs["kelas"] == "malam") {
+        $tanggal_input = $mhs["tanggal_input"];
+        $tahun = explode("-",$tanggal_input);
+        echo "TI CN M " . substr($tahun[0],2);
+      }elseif($mhs["program_studi"] == "teknik informatika" && $mhs["konsentrasi"] == "computerized design & multimedia" && $mhs["kelas"] == "malam") {
+        $tanggal_input = $mhs["tanggal_input"];
+        $tahun = explode("-",$tanggal_input);
+        echo "TI CDM M " . substr($tahun[0],2);
+      }elseif($mhs["program_studi"] == "sistem informasi" && $mhs["konsentrasi"] == "computerized accounting" && $mhs["kelas"] == "malam") {
+        $tanggal_input = $mhs["tanggal_input"];
+        $tahun = explode("-",$tanggal_input);
+        echo "SI CA M " . substr($tahun[0],2);
+      }elseif($mhs["program_studi"] == "sistem informasi" && $mhs["konsentrasi"] == "e-commerce" && $mhs["kelas"] == "malam") {
+        $tanggal_input = $mhs["tanggal_input"];
+        $tahun = explode("-",$tanggal_input);
+        echo "SI EC M " . substr($tahun[0],2);
+      }elseif($mhs["program_studi"] == "sistem informasi" && $mhs["konsentrasi"] == "business intelligence & management support system" && $mhs["kelas"] == "malam") {
+        $tanggal_input = $mhs["tanggal_input"];
+        $tahun = explode("-",$tanggal_input);
+        echo "SI BI M " . substr($tahun[0],2);
+      }elseif($mhs["program_studi"] == "teknik informatika" && $mhs["konsentrasi"] == "software engineering" && $mhs["kelas"] == "reguler") {
+        $tanggal_input = $mhs["tanggal_input"];
+        $tahun = explode("-",$tanggal_input);
+        echo "TI SE P " . substr($tahun[0],2);
+      }elseif($mhs["program_studi"] == "teknik informatika" && $mhs["konsentrasi"] == "computer networking" && $mhs["kelas"] == "reguler") {
+        $tanggal_input = $mhs["tanggal_input"];
+        $tahun = explode("-",$tanggal_input);
+        echo "TI CN P " . substr($tahun[0],2);
+      }elseif($mhs["program_studi"] == "teknik informatika" && $mhs["konsentrasi"] == "computerized design & multimedia" && $mhs["kelas"] == "reguler") {
+        $tanggal_input = $mhs["tanggal_input"];
+        $tahun = explode("-",$tanggal_input);
+        echo "TI CDM P " . substr($tahun[0],2);
+      }elseif($mhs["program_studi"] == "sistem informasi" && $mhs["konsentrasi"] == "computerized accounting" && $mhs["kelas"] == "reguler") {
+        $tanggal_input = $mhs["tanggal_input"];
+        $tahun = explode("-",$tanggal_input);
+        echo "SI CA P " . substr($tahun[0],2);
+      }elseif($mhs["program_studi"] == "sistem informasi" && $mhs["konsentrasi"] == "e-commerce" && $mhs["kelas"] == "reguler") {
+        $tanggal_input = $mhs["tanggal_input"];
+        $tahun = explode("-",$tanggal_input);
+        echo "SI EC P " . substr($tahun[0],2);
+      }elseif($mhs["program_studi"] == "sistem informasi" && $mhs["konsentrasi"] == "business intelligence & management support system" && $mhs["kelas"] == "reguler") {
+        $tanggal_input = $mhs["tanggal_input"];
+        $tahun = explode("-",$tanggal_input);
+        echo "SI BI P " . substr($tahun[0],2);
+      }elseif($mhs["program_studi"] == "teknik informatika" && $mhs["konsentrasi"] == "software engineering" && $mhs["kelas"] == "shift") {
+        $tanggal_input = $mhs["tanggal_input"];
+        $tahun = explode("-",$tanggal_input);
+        echo "TI SE Sh " . substr($tahun[0],2);
+      }elseif($mhs["program_studi"] == "teknik informatika" && $mhs["konsentrasi"] == "computer networking" && $mhs["kelas"] == "shift") {
+        $tanggal_input = $mhs["tanggal_input"];
+        $tahun = explode("-",$tanggal_input);
+        echo "TI CN Sh " . substr($tahun[0],2);
+      }elseif($mhs["program_studi"] == "teknik informatika" && $mhs["konsentrasi"] == "computerized design & multimedia" && $mhs["kelas"] == "shift") {
+        $tanggal_input = $mhs["tanggal_input"];
+        $tahun = explode("-",$tanggal_input);
+        echo "TI CDM Sh " . substr($tahun[0],2);
+      }elseif($mhs["program_studi"] == "sistem informasi" && $mhs["konsentrasi"] == "computerized accounting" && $mhs["kelas"] == "shift") {
+        $tanggal_input = $mhs["tanggal_input"];
+        $tahun = explode("-",$tanggal_input);
+        echo "SI CA Sh " . substr($tahun[0],2);
+      }elseif($mhs["program_studi"] == "sistem informasi" && $mhs["konsentrasi"] == "e-commerce" && $mhs["kelas"] == "shift") {
+        $tanggal_input = $mhs["tanggal_input"];
+        $tahun = explode("-",$tanggal_input);
+        echo "SI EC Sh " . substr($tahun[0],2);
+      }elseif($mhs["program_studi"] == "sistem informasi" && $mhs["konsentrasi"] == "business intelligence & management support system" && $mhs["kelas"] == "shift") {
+        $tanggal_input = $mhs["tanggal_input"];
+        $tahun = explode("-",$tanggal_input);
+        echo "SI BI Sh " . substr($tahun[0],2);
+      }
+
+
+    }
+
+
+  }
+
+}
+
+
 ?>
 
 

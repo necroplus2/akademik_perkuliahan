@@ -4,91 +4,7 @@ require 'fungsi.php';
 $mahasiswa = query("SELECT * FROM tb_mahasiswa ORDER BY nama_mahasiswa");
 
 
-function kelas($nim) {
-  global $mahasiswa;
-  foreach($mahasiswa as $mhs){
-    if($mhs["nim"] == $nim){
-      if($mhs["program_studi"] == "teknik informatika" && $mhs["konsentrasi"] == "software engineering" && $mhs["kelas"] == "malam") {
-        $tanggal_input = $mhs["tanggal_input"];
-        $tahun = explode("-",$tanggal_input);
-        echo "TI SE M " . substr($tahun[0],2);
-      }elseif($mhs["program_studi"] == "teknik informatika" && $mhs["konsentrasi"] == "computer networking" && $mhs["kelas"] == "malam") {
-        $tanggal_input = $mhs["tanggal_input"];
-        $tahun = explode("-",$tanggal_input);
-        echo "TI CN M " . substr($tahun[0],2);
-      }elseif($mhs["program_studi"] == "teknik informatika" && $mhs["konsentrasi"] == "computerized design & multimedia" && $mhs["kelas"] == "malam") {
-        $tanggal_input = $mhs["tanggal_input"];
-        $tahun = explode("-",$tanggal_input);
-        echo "TI CDM M " . substr($tahun[0],2);
-      }elseif($mhs["program_studi"] == "sistem informasi" && $mhs["konsentrasi"] == "computerized accounting" && $mhs["kelas"] == "malam") {
-        $tanggal_input = $mhs["tanggal_input"];
-        $tahun = explode("-",$tanggal_input);
-        echo "SI CA M " . substr($tahun[0],2);
-      }elseif($mhs["program_studi"] == "sistem informasi" && $mhs["konsentrasi"] == "e-commerce" && $mhs["kelas"] == "malam") {
-        $tanggal_input = $mhs["tanggal_input"];
-        $tahun = explode("-",$tanggal_input);
-        echo "SI EC M " . substr($tahun[0],2);
-      }elseif($mhs["program_studi"] == "sistem informasi" && $mhs["konsentrasi"] == "business intelligence & management support system" && $mhs["kelas"] == "malam") {
-        $tanggal_input = $mhs["tanggal_input"];
-        $tahun = explode("-",$tanggal_input);
-        echo "SI BI M " . substr($tahun[0],2);
-      }elseif($mhs["program_studi"] == "teknik informatika" && $mhs["konsentrasi"] == "software engineering" && $mhs["kelas"] == "reguler") {
-        $tanggal_input = $mhs["tanggal_input"];
-        $tahun = explode("-",$tanggal_input);
-        echo "TI SE P " . substr($tahun[0],2);
-      }elseif($mhs["program_studi"] == "teknik informatika" && $mhs["konsentrasi"] == "computer networking" && $mhs["kelas"] == "reguler") {
-        $tanggal_input = $mhs["tanggal_input"];
-        $tahun = explode("-",$tanggal_input);
-        echo "TI CN P " . substr($tahun[0],2);
-      }elseif($mhs["program_studi"] == "teknik informatika" && $mhs["konsentrasi"] == "computerized design & multimedia" && $mhs["kelas"] == "reguler") {
-        $tanggal_input = $mhs["tanggal_input"];
-        $tahun = explode("-",$tanggal_input);
-        echo "TI CDM P " . substr($tahun[0],2);
-      }elseif($mhs["program_studi"] == "sistem informasi" && $mhs["konsentrasi"] == "computerized accounting" && $mhs["kelas"] == "reguler") {
-        $tanggal_input = $mhs["tanggal_input"];
-        $tahun = explode("-",$tanggal_input);
-        echo "SI CA P " . substr($tahun[0],2);
-      }elseif($mhs["program_studi"] == "sistem informasi" && $mhs["konsentrasi"] == "e-commerce" && $mhs["kelas"] == "reguler") {
-        $tanggal_input = $mhs["tanggal_input"];
-        $tahun = explode("-",$tanggal_input);
-        echo "SI EC P " . substr($tahun[0],2);
-      }elseif($mhs["program_studi"] == "sistem informasi" && $mhs["konsentrasi"] == "business intelligence & management support system" && $mhs["kelas"] == "reguler") {
-        $tanggal_input = $mhs["tanggal_input"];
-        $tahun = explode("-",$tanggal_input);
-        echo "SI BI P " . substr($tahun[0],2);
-      }elseif($mhs["program_studi"] == "teknik informatika" && $mhs["konsentrasi"] == "software engineering" && $mhs["kelas"] == "shift") {
-        $tanggal_input = $mhs["tanggal_input"];
-        $tahun = explode("-",$tanggal_input);
-        echo "TI SE Sh " . substr($tahun[0],2);
-      }elseif($mhs["program_studi"] == "teknik informatika" && $mhs["konsentrasi"] == "computer networking" && $mhs["kelas"] == "shift") {
-        $tanggal_input = $mhs["tanggal_input"];
-        $tahun = explode("-",$tanggal_input);
-        echo "TI CN Sh " . substr($tahun[0],2);
-      }elseif($mhs["program_studi"] == "teknik informatika" && $mhs["konsentrasi"] == "computerized design & multimedia" && $mhs["kelas"] == "shift") {
-        $tanggal_input = $mhs["tanggal_input"];
-        $tahun = explode("-",$tanggal_input);
-        echo "TI CDM Sh " . substr($tahun[0],2);
-      }elseif($mhs["program_studi"] == "sistem informasi" && $mhs["konsentrasi"] == "computerized accounting" && $mhs["kelas"] == "shift") {
-        $tanggal_input = $mhs["tanggal_input"];
-        $tahun = explode("-",$tanggal_input);
-        echo "SI CA Sh " . substr($tahun[0],2);
-      }elseif($mhs["program_studi"] == "sistem informasi" && $mhs["konsentrasi"] == "e-commerce" && $mhs["kelas"] == "shift") {
-        $tanggal_input = $mhs["tanggal_input"];
-        $tahun = explode("-",$tanggal_input);
-        echo "SI EC Sh " . substr($tahun[0],2);
-      }elseif($mhs["program_studi"] == "sistem informasi" && $mhs["konsentrasi"] == "business intelligence & management support system" && $mhs["kelas"] == "shift") {
-        $tanggal_input = $mhs["tanggal_input"];
-        $tahun = explode("-",$tanggal_input);
-        echo "SI BI Sh " . substr($tahun[0],2);
-      }
 
-
-    }
-
-
-  }
-
-}
 
 ?>
 
@@ -103,7 +19,16 @@ function kelas($nim) {
     <div class="tambah">
       <a href="mahasiswa/tambah.php" class="btn btn-primary mb-4"><i class="bi bi-plus-square me-2"></i>Tambah Data</a>
     </div>
-    <div class="col-md-12">
+    <div class="col-md-10 my-4">
+      <!-- isi filtering atau search -->
+      <div class="col-md-4">
+        <div class="input-group mb-3">
+          <span class="input-group-text" name="keyword_search"><i class="bi bi-search"></i></span>
+          <input type="text" class="form-control" placeholder="Search" id="keyword_search">
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12" id="container_table">
       <table class="table table-striped">
         <thead>
           <tr>
@@ -142,5 +67,24 @@ function kelas($nim) {
 
 
 <script>
+  // dashboard aktif
   aktif('../../perkuliahan/mahasiswa.php');  
+
+  let keyword = document.getElementById('keyword_search');
+  let tableContainer = document.getElementById('container_table');
+
+  keyword.addEventListener('keyup', function(){
+    var xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = function() {
+      if(xhr.readyState == 4 && xhr.status == 200) {
+        tableContainer.innerHTML = xhr.responseText;
+      }
+    }
+
+    xhr.open('GET', 'ajax/mahasiswa.php?keyword=' + keyword.value, true);
+    xhr.send();
+  })
+
+
 </script>
