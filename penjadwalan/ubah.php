@@ -51,7 +51,16 @@ if( ubah_jadwal($_POST) > 0 ) {
       </div>
       <div class="mb-3">
         <label for="kode_matkul" class="form-label">Kode Matkul</label>
-        <input type="text" class="form-control" id="kode_matkul" name="kode_matkul" value="<?php echo $jadwal["kode_matkul"]; ?>">
+        <!-- <input type="text" class="form-control" id="kode_matkul" name="kode_matkul" value="<?php //echo $jadwal["kode_matkul"]; ?>"> -->
+        <select name="kode_matkul" id="kode_matkul" class="form-select">
+          <option disabled>-- Pilih Dosen --</option>
+          <?php foreach($matkul as $mk) { ?>
+          <option 
+          <?php if($mk["kode_matkul"] == $jadwal["kode_matkul"]) {echo "selected";}?> value="<?php echo $mk["kode_matkul"]; ?>"><?php echo $mk["kode_matkul"]; ?> | <?php echo $mk["mata_kuliah"]; ?>
+          </option>
+          <?php } ?>
+        </select>
+
       </div>
       <div class="mb-3">
         <label for="kode_dosen" class="form-label">Kode Dosen</label>
@@ -59,7 +68,9 @@ if( ubah_jadwal($_POST) > 0 ) {
         <select name="kode_dosen" id="kode_dosen" class="form-select">
           <option disabled>-- Pilih Dosen --</option>
           <?php foreach($dosen as $ds) { ?>
-          <option <?php if($ds["kode_dosen"] == $jadwal["kode_dosen"]) {echo "selected";}?> value="<?php if($ds["kode_dosen"] == $jadwal["kode_dosen"]) {echo $jadwal["kode_dosen"];} ?>"><?php echo $ds["kode_dosen"]; ?> | <?php echo $ds["nama_dosen"]; ?></option>
+          <option 
+          <?php if($ds["kode_dosen"] == $jadwal["kode_dosen"]) {echo "selected";}?> value="<?php echo $ds["kode_dosen"]; ?>"><?php echo $ds["kode_dosen"]; ?> | <?php echo $ds["nama_dosen"]; ?>
+          </option>
           <?php } ?>
         </select>
       </div>
