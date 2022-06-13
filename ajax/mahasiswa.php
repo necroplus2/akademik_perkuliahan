@@ -3,7 +3,16 @@ require '../fungsi.php';
 // require '../template.php';
 $keyword = $_GET["keyword"];
 
-$mahasiswa = query("SELECT * FROM tb_mahasiswa WHERE nim LIKE '%$keyword%' OR nama_mahasiswa LIKE '%$keyword%' OR tanggal_lahir LIKE '%$keyword%'  ");
+if($keyword == ''){
+  $query = "SELECT * FROM tb_mahasiswa";
+  $mahasiswa = query($query);
+}else{
+  $query = "SELECT * FROM tb_mahasiswa WHERE nim LIKE '%$keyword%' OR nama_mahasiswa LIKE '%$keyword%' OR tanggal_lahir LIKE '%$keyword%'";
+  $mahasiswa = query($query);
+}
+
+// $query = "SELECT * FROM tb_mahasiswa WHERE nim LIKE '%$keyword%' OR nama_mahasiswa LIKE '%$keyword%' OR tanggal_lahir LIKE '%$keyword%' ORDER BY nim $descasc";
+
 
 ?>
       

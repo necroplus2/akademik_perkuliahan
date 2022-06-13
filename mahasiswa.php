@@ -1,7 +1,7 @@
 <?php  
 require 'fungsi.php';
 
-$mahasiswa = query("SELECT * FROM tb_mahasiswa ORDER BY nama_mahasiswa");
+$mahasiswa = query("SELECT * FROM tb_mahasiswa");
 
 
 
@@ -22,12 +22,12 @@ $mahasiswa = query("SELECT * FROM tb_mahasiswa ORDER BY nama_mahasiswa");
     <div class="col-md-10 my-4">
       <!-- isi filtering atau search -->
       <div class="col-md-4">
-        <div class="input-group mb-3">
+        <div class="input-group mt-3">
           <span class="input-group-text" name="keyword_search"><i class="bi bi-search"></i></span>
-          <input type="text" class="form-control" placeholder="Search" id="keyword_search">
-        </div>
+          <input type="text" class="form-control me-3" placeholder="Search" id="keyword_search">
       </div>
-    </div>
+
+      </div>
     <div class="col-md-12" id="container_table">
       <table class="table table-striped">
         <thead>
@@ -72,19 +72,39 @@ $mahasiswa = query("SELECT * FROM tb_mahasiswa ORDER BY nama_mahasiswa");
 
   let keyword = document.getElementById('keyword_search');
   let tableContainer = document.getElementById('container_table');
-
+  let descasc = document.querySelectorAll('.descasc');
+  
   keyword.addEventListener('keyup', function(){
-    var xhr = new XMLHttpRequest();
-
+    let xhr = new XMLHttpRequest();
+    
     xhr.onreadystatechange = function() {
       if(xhr.readyState == 4 && xhr.status == 200) {
         tableContainer.innerHTML = xhr.responseText;
       }
     }
-
     xhr.open('GET', 'ajax/mahasiswa.php?keyword=' + keyword.value, true);
     xhr.send();
-  })
+  });
+
+  
+  descasc.forEach(function(d){
+    d.addEventListener('click',function(c){
+      // console.log(c.target.value);
+      c.target.setAttribute("checked", "true");
+      let result = c.target.value;
+      let xhr = new XMLHttpRequest();
+
+      xhr.onload = function() {
+        tableContainer.innerHTML = this.responseText;
+      }
+
+      xhr.open("POST", "ajax/mahasiswa.php");
+      xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      xhr.send(`name=${result}`);
+    });
+  });
 
 
+
+  
 </script>
