@@ -1,8 +1,13 @@
 <title>Dashboard</title>
 
-<title>Jadwal</title>
-
 <?php
+session_start();
+
+if(!isset($_SESSION["login"])){
+  header("Location: signin.php");
+  exit;
+}
+
 require 'template.php';
 require 'fungsi.php';
 
